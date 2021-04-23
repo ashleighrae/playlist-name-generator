@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import Generator from './components/Generator';
 import PlaylistNames from './components/PlaylistNames';
 
-var isGenerated = true;
-
 const App = () => {
+  
+  const [keywords, setKeywords] = useState("");
   const [generate, setGenerated] = useState(false);
 
   return (
@@ -13,11 +13,11 @@ const App = () => {
       <header className="App-header">
         Playlist Name Generator
       </header>
-      <Generator setGenerated={setGenerated} />
+      <Generator setGenerated={setGenerated} setKeywords={setKeywords}/>
 
       {generate &&
         <div class="animate">
-          <PlaylistNames />
+          <PlaylistNames keywords={keywords}/>
         </div>
       }
     </div>
