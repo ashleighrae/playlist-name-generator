@@ -1,13 +1,13 @@
-@import 'App.scss';
+@import '../App.scss';
 
-.form__group {
+.input {
   position: relative;
   padding: 15px 0 0;
   margin-top: 20px;
   width: 100%;
 }
 
-.form__field {
+.inputfield {
   font-family: inherit;
   width: 100%;
   border: 0;
@@ -23,14 +23,14 @@
     color: transparent;
   }
 
-  &:placeholder-shown ~ .form__label {
+  &:placeholder-shown ~ .inputlabel {
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
   }
 }
 
-.form__label {
+.inputlabel {
   position: absolute;
   top: 0;
   display: block;
@@ -39,25 +39,27 @@
   color: $gray;
 }
 
-.form__field:focus {
-  ~ .form__label {
+.inputfield:focus {
+  ~ .inputlabel {
     position: absolute;
     top: 0;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
     color: $primary;
-    font-weight:700;    
+    font-weight:600;    
   }
-  padding-bottom: 6px;  
-  font-weight: 700;
+
+  &::placeholder {
+    font-size: 1rem;
+    color: $gray;
+  }
+  
+  padding-bottom: 8px;  
+  font-weight: 600;
   border-width: 3px;
   border-image: linear-gradient(to right, $primary,$secondary);
   border-image-slice: 1;
-}
-
-.form__field{
-  &:required,&:invalid { box-shadow:none; }
 }
 
 button {
@@ -67,7 +69,7 @@ button {
   font-family: inherit;
 }
 
-.testbutton {
+.generatebutton {
   width: 150px;
   height:50px;
   border-radius:180px;
@@ -78,42 +80,40 @@ button {
   padding-top: 40px;
 }
 
-.testbutton:before {
+.generatebutton:before {
   content:'';
   z-index:1;
   position:absolute;
-  display:block;
   width:80%;
   height:70%;
   top:15%;
   left:10%;
   transition: 0.3s opacity ease-in-out;
-  filter:blur(15px);
+  filter:blur(0.5rem);
   opacity:0;
   background: linear-gradient(60deg, $primary, $secondary);
 }
 
-.testbutton:hover:before {
-  opacity:1;
-  transition: 0.3s opacity ease-in-out;
-  filter:blur(20px);
-  background: linear-gradient(60deg, $primary, $secondary);  
-}
-
-.testbutton:after {
+.generatebutton:after {
   content:'GENERATE';
   border-radius:185px;
   width:90%;
   height:80%;
   top:10%;
   left:5%;  
-  line-height:40px;
-  font-size:18px;
+  line-height:2.5rem;
+  font-size:1.2rem;
   text-align:center;
   color:white;
   background-color:black;
   font-weight:bold;
   z-index:5;
   position:absolute;
-  display:block;
+}
+
+.generatebutton:hover:before {
+  opacity:1;
+  transition: 0.3s opacity ease-in-out;
+  filter:blur(1rem);
+  background: linear-gradient(60deg, $primary, $secondary);  
 }

@@ -1,4 +1,4 @@
-import '../Generator.scss';
+import '../scss/Generator.scss';
 import React, { useState } from 'react';
 
 const Generator = props => {
@@ -16,11 +16,11 @@ const Generator = props => {
 
     return (
         <div className="Generator">
-            <div class="form__group field">
-                <input type="input" onChange={event => setValue(event.target.value)} value={values} class="form__field" placeholder="Seperate by Comma" name="keywords" id='keywords' required />
-                <label for="keywords" class="form__label">Enter Keywords</label>
+            <div class="input">
+                <input type="input" onChange={event => setValue(event.target.value)} value={values} class="inputfield" placeholder="Jazzy, Chill, Lo-Fi" name="keywords" id='keywords' required />
+                <label for="keywords" class="inputlabel">Enter Keywords</label>
 
-                <button class="testbutton" onClick={handleClick} />
+                <button class="generatebutton" onClick={handleClick} />
 
             </div>
         </div>

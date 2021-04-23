@@ -1,4 +1,4 @@
-import '../PlaylistNames.scss';
+import '../scss/PlaylistNames.scss';
 
 const PlaylistNames = props => {
     const keywordArray = props.keywords.trim().split(",");
