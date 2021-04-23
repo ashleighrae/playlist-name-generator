@@ -1,0 +1,119 @@
+@import 'App.scss';
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}
+
+button {
+  margin-top: 40px;
+  border: none;
+    outline: none;
+  font-family: inherit;
+}
+
+.testbutton {
+  width: 150px;
+  height:50px;
+  border-radius:180px;
+  position:relative;
+  background: linear-gradient(60deg, $primary, $secondary);
+  cursor:pointer;
+  line-height:12px;
+  padding-top: 40px;
+}
+
+.testbutton:before {
+  content:'';
+  z-index:1;
+  position:absolute;
+  display:block;
+  width:80%;
+  height:70%;
+  top:15%;
+  left:10%;
+  transition: 0.3s opacity ease-in-out;
+  filter:blur(15px);
+  opacity:0;
+  background: linear-gradient(60deg, $primary, $secondary);
+}
+
+.testbutton:hover:before {
+  opacity:1;
+  transition: 0.3s opacity ease-in-out;
+  filter:blur(20px);
+  background: linear-gradient(60deg, $primary, $secondary);  
+}
+
+.testbutton:after {
+  content:'GENERATE';
+  border-radius:185px;
+  width:90%;
+  height:80%;
+  top:10%;
+  left:5%;  
+  line-height:40px;
+  font-size:18px;
+  text-align:center;
+  color:white;
+  background-color:black;
+  font-weight:bold;
+  z-index:5;
+  position:absolute;
+  display:block;
+}
