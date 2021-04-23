@@ -90,30 +90,30 @@ button {
   transition: 0.3s opacity ease-in-out;
   filter:blur(15px);
   opacity:0;
-  background: linear-gradient(60deg,$primary, $secondary);
+  background: linear-gradient(60deg, $primary, $secondary);
 }
 
 .testbutton:hover:before {
   opacity:1;
   transition: 0.3s opacity ease-in-out;
-  filter:blur(25px);
+  filter:blur(20px);
   background: linear-gradient(60deg, $primary, $secondary);  
 }
 
 .testbutton:after {
   content:'GENERATE';
-  text-align:center;
+  border-radius:185px;
+  width:90%;
+  height:80%;
+  top:10%;
+  left:5%;  
   line-height:40px;
   font-size:18px;
-  color:rgba(235,235,235,1);
+  text-align:center;
+  color:white;
+  background-color:black;
   font-weight:bold;
   z-index:5;
   position:absolute;
   display:block;
-  border-radius:180px;
-  width:92%;
-  height:80%;
-  top:10%;
-  left:4%;  
-  background-color:rgb(19, 20, 22);
 }
