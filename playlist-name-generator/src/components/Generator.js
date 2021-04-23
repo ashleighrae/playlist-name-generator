@@ -9,6 +9,7 @@ const Generator = props => {
 
         props.setKeywords(values);
         if (values !== "" && regExp.test(values)) {
+            setValue(values + " ")
             props.setGenerated(true);
         }
     }
